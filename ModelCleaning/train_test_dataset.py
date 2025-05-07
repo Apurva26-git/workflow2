@@ -6,14 +6,14 @@ from sklearn.model_selection import train_test_split
 
 workspace = os.getenv('GITHUB_WORKSPACE')
 model_cleaning_dir = os.path.join(workspace, 'ModelCleaning')
-csv_file_path = os.path.join(model_cleaning_dir, 'cleaned_data.csv')
+/workspaces/workflow2/ModelCleaning/data.csv = os.path.join(model_cleaning_dir, 'data.csv')
 
-if os.path.exists(csv_file_path):
-    print(f"File found: {csv_file_path}")
+if os.path.exists(/workspaces/workflow2/ModelCleaning/data.csv):
+    print(f"File found: {/workspaces/workflow2/ModelCleaning/data.csv}")
 else:
-    print(f"File not found at: {csv_file_path}")
+    print(f"File not found at: {/workspaces/workflow2/ModelCleaning/data.csv}")
 
-df = read_csv(csv_file_path)
+df = read_csv(/workspaces/workflow2/ModelCleaning/data.csv)
 print(df.head())
 
 X = df["Age"].values.reshape(-1, 1)
