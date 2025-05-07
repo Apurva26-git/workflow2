@@ -23,7 +23,7 @@ workspace = os.getenv('GITHUB_WORKSPACE')
 model_cleaning_dir = os.path.join(workspace, 'ModelCleaning')
 os.makedirs(model_cleaning_dir, exist_ok=True)
 
-output_path = os.path.join(model_cleaning_dir, 'cleaned_data.csv')
+output_path = os.path.join(model_cleaning_dir, 'data.csv')
 df.to_csv(output_path, index=False)
 
 print("Cleaned Data:")
