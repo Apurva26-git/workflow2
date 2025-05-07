@@ -1,0 +1,26 @@
+name: pythonworkflow
+on: workflow_dispatch
+
+jobs:
+
+  data_pipeline:
+    name: data_pipeline
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: clean_data
+        run: |
+          pwd
+          ls -al
+          pwd
+          cd ModelCleaning
+          pip install pandas
+          python cleandata.py
+          ls -al
+
+      - name: train_test_dataset
+        run: |
+          pip install scikit-learn joblib
+          python ModelCleaning/train_test_dataset.py
